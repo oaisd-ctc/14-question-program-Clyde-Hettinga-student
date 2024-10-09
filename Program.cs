@@ -7,7 +7,7 @@ public class Program
         Console.WriteLine("What is your name?");
         string name = Console.ReadLine();
 
-        //This is here because repeating their name would feel weird
+        //This is only here because repeating their name would feel weird
         Console.WriteLine("What pronouns would you like this program to refer to you by? (enter he, she, or they)");
         string pronouns = Console.ReadLine();
 
@@ -24,6 +24,7 @@ public class Program
         Console.WriteLine("What is your shoe size?");
         string shoes = Console.ReadLine();
 
+        //Mr. Luyk said I could change this one
         Console.WriteLine("What is your favorite color?");
         string favColor = Console.ReadLine();
 
@@ -48,9 +49,11 @@ public class Program
         Console.WriteLine("How many siblings do you have?");
         string siblings = Console.ReadLine();
 
-        //Format for if/else statements in C# taken from https://www.w3schools.com/cs/cs_conditions.php
-        //Comparing strings in if/else statements in C# taken from https://stackoverflow.com/questions/11283764/comparing-strings-in-c-sharp-with-or-in-an-if-statement
-        if (pronouns.ToLower().Equals("she"))
+        /*Format for if/else statements in C# taken from https://www.w3schools.com/cs/cs_conditions.php
+        Comparing strings in if/else statements in C# taken from https://stackoverflow.com/questions/11283764/comparing-strings-in-c-sharp-with-or-in-an-if-statement
+        I already kind of knew how to do these (courtesy of Java) but wanted to make sure the syntax was right*/
+
+        if (pronouns.ToLower().Contains("she"))
         {
             Console.WriteLine("My friend's name is " + name + ". She is " + age + " years old and has " + siblings + " siblings. Her eyes are "
                               + eyes + " and her hair is " + hair + ". She wears size " + shoes + " shoes. Her favorite color is " + favColor +
@@ -58,7 +61,7 @@ public class Program
                               ". Her favorite teacher is " + teacher + " and her favorite class is " + favClass + ". Her dream job is to be a "
                               + dreamJob + ". She will be " + (age + 5) + " in 5 years.");
         }
-        else if (pronouns.ToLower().Equals("he"))
+        else if (!pronouns.ToLower().Contains("they") && pronouns.ToLower().Contains("he"))
         {
             Console.WriteLine("My friend's name is " + name + ". He is " + age + " years old and has " + siblings + " siblings. His eyes are "
                               + eyes + " and his hair is " + hair + ". He wears size " + shoes + " shoes. His favorite color is " + favColor +
